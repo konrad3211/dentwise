@@ -8,16 +8,14 @@ import WhatToAsk from "@/components/landing/WhatToAsk";
 
 export default function Home() {
   return (
-    <div>
-      <div className="min-h-screen bg-background">
-        <Header />
-        <Hero />
-        <HowItWorks />
-        <WhatToAsk />
-        <PricingSection />
-        <CTA />
-        <Footer />
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <Hero />
+      <HowItWorks />
+      <WhatToAsk />
+      <PricingSection />
+      <CTA />
+      <Footer />
     </div>
   );
 }
