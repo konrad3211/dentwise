@@ -9,7 +9,7 @@ function DoctorInfo({ doctorId }: { doctorId: string }) {
 
   return (
     <div className="flex items-center gap-4">
-      <Image
+      <img
         src={doctor.imageUrl!}
         alt={doctor.name}
         width={48}
