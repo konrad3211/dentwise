@@ -38,6 +38,7 @@ export const useUpdateDoctor = () => {
     //invalidate realated queries to refresh the data
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["getDoctors"] });
+      queryClient.invalidateQueries({ queryKey: ["getAvailableDoctors"] });
     },
     onError: (error) => console.log("Error while updating a doctor"),
   });

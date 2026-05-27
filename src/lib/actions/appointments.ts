@@ -2,8 +2,9 @@
 
 import { auth } from "@clerk/nextjs/server";
 import { prisma } from "../prisma";
+import { AppointmentStatus } from "@prisma/client";
 
-const transformAppointmnt = (appointment: any) => {
+const transformAppointment = (appointment: any) => {
   return {
     ...appointment,
     patientName:
@@ -30,7 +31,7 @@ export const getAppointments = async () => {
       },
       orderBy: { createdAt: "desc" },
     });
-    return appointments;
+    return appointments.map(transformAppointment);
   } catch (error) {
     console.log("Error fetching appointments:", error);
     throw new Error("Failed to fetch appointments");
@@ -55,7 +56,7 @@ export async function getUserAppointments() {
       },
       orderBy: [{ date: "asc" }, { time: "asc" }],
     });
-    return appointments.map(transformAppointmnt);
+    return appointments.map(transformAppointment);
   } catch (error) {
     console.error("Error fetching user appointments:", error);
     throw new Error("Failed to fetch user appointments");
@@ -152,9 +153,25 @@ export const bookAppointment = async (input: BookAppointmentInput) => {
         doctor: { select: { name: true, imageUrl: true } },
       },
     });
-    return transformAppointmnt(appointment);
+    return transformAppointment(appointment);
   } catch (error) {
     console.error("Error booking appointment:", error);
     throw new Error("Failed to book appointment");
+  }
+};
+
+export const updateAppointmentStatus = async (input: {
+  id: string;
+  status: AppointmentStatus;
+}) => {
+  try {
+    const appointment = await prisma.appointment.update({
+      where: { id: input.id },
+      data: { status: input.status },
+    });
+    return appointment;
+  } catch (error) {
+    console.log("Error updating appointment", error);
+    throw new Error("Failed to update appointment");
   }
 };
