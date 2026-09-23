@@ -1,5 +1,7 @@
 # DentWise
 
+> Learning project built while following the **Codesistency** course and later extended as part of my full-stack development practice.
+
 A full-stack dental appointment application with a patient dashboard, doctor management, email confirmations, and an AI voice assistant integration.
 
 Built with Next.js, TypeScript, PostgreSQL, Prisma, and Clerk.
