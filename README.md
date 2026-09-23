@@ -1,5 +1,8 @@
 # DentWise
 
+<img width="1672" height="941" alt="dentwise-showcase" src="https://github.com/user-attachments/assets/22d4b5ee-410b-41ad-a85f-17dd9082954d" />
+
+
 > Learning project built while following the **Codesistency** course and later extended as part of my full-stack development practice.
 
 A full-stack dental appointment application with a patient dashboard, doctor management, email confirmations, and an AI voice assistant integration.
@@ -9,6 +12,7 @@ Built with Next.js, TypeScript, PostgreSQL, Prisma, and Clerk.
 **[Live demo → dentwise.konradpatla.pl](https://dentwise.konradpatla.pl/)**
 
 ## Features
+<img width="1672" height="941" alt="2ba4d045-9779-4feb-b227-cbabd743580a" src="https://github.com/user-attachments/assets/3c0e4e03-4561-4048-9171-dff840cbed00" />
 
 ### Appointment booking
 
